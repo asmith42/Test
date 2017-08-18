@@ -13,10 +13,10 @@
 			data.forEach(function(item, index){
 				doc.innerHTML = doc.innerHTML + "<div id=\"" + item.full_name + "\"><h3>Project name: " + item.name + "</h3> --- " + item.description + "<br></div>";
 				console.log("//api.github.com/repos/" + item.full_name + "/comments");
-				
-				$.getJSON("https://api.github.com/repos/" + item.full_name + "/releases", {}, function(innerData){
+				var releases = "https://api.github.com/repos/" + item.full_name + "/releases";
+				$.getJSON(releases, {}, function(innerData){
 					console.log(innerData);
-					data.forEach(function(item1, index1){
+					innerData.forEach(function(item1, index1){
 					
 						doc.innerHTML = doc.innerHTML + item1.name + " " + item1.tag_name + "<br/>Assets: <br/>"; 
 						var assets = item1.assets;
