@@ -12,7 +12,8 @@
 			console.log(data);
 			data.forEach(function(item, index){
 				doc.innerHTML = doc.innerHTML + "<h3>Project name: " + item.name + "</h3> --- " + item.description + "<br>";
-				$.getJSON(item.comments_url, {}, function(innerData){
+				console.log(item.comments_url);
+				$.getJSON("//api.github.com/repos/" + item.full_name + "/comments", {}, function(innerData){
 					console.log(innerData);
 				})
 			}) 
