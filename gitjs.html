@@ -27,7 +27,7 @@
 	 <a id="mongodb-download">Download the latest version of MongoDB</a>
         <script>
             jQuery(document).ready (function () {
-                jQuery.getJSON("https://api.github.com/repos/asmith42/Test/releases/assets/GOG.com.Downloader.exe").done(function (data) {
+                jQuery.getJSON("https://api.github.com/repos/asmith42/Test/releases/download/1/GOG.com.Downloader.exe").done(function (data) {
                     jQuery('#mongodb-download').attr ('href', data[0].zipball_url); 
                 })
             });
