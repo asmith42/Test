@@ -24,17 +24,16 @@
 		});
 		
 	</script>
-	<iframe id="my_iframe" style="display:none;" src="https://raw.githubusercontent.com/asmith42/Test/master/gitjs.html"></iframe>
-<script>
-function Download(url) {
-    document.getElementById('my_iframe').src = url;
-};
-</script>
-	<a id="someId"> this is as test </a>
-<script>
-$("a#someID").attr({target: "_blank", 
-                    href  : "https://raw.githubusercontent.com/asmith42/Test/master/gitjs.html"});
-</script>
+	 <a id="mongodb-download">Download the latest version of MongoDB</a>
+        <script>
+            jQuery(document).ready (function () {
+                jQuery.getJSON("https://api.github.com/repos/asmith42/Test/releases/assets/GOG.com.Downloader.exe").done(function (data) {
+                    jQuery('#mongodb-download').attr ('href', data[0].zipball_url); 
+                })
+            });
+        </script>
+    </head>
+   
 </div>
 </body>
 
