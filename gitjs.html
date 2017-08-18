@@ -2,16 +2,22 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
+<body>
+
 <div id="github-projects">
 	<script type="text/javascript">
-		doc = document.getElementByID("github-projects")
-		var data = $.getJSON('//api.github.com/users/jcolebrand/repos',{},function(data){console.log(data)})
-		data.forEach(function(item, index) {
-			doc.innerHTML = doc.innerHTML + "Project name: " + item.name + " --- " + item.description + "<br>";
-		})
-	</script>
-</div>
+		
+		$.getJSON('//api.github.com/users/jcolebrand/repos',{},function(data){
 
+			console.log(data);
+			data.forEach(item, index) {
+				doc.innerHTML = doc.innerHTML + "Project name: " + item.name + " --- " + item.description + "<br>";
+			}
+		});
+		
+		</script>
+</div>
+</body>
 
 
 
