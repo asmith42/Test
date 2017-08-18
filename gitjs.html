@@ -4,7 +4,11 @@
 </head>
 <div id="github-projects">
 	<script type="text/javascript">
-		$.getJSON('//api.github.com/users/jcolebrand/repos',{},function(data){console.log(data)})
+		doc = document.getElementByID("github-projects")
+		var data = $.getJSON('//api.github.com/users/jcolebrand/repos',{},function(data){console.log(data)})
+		data.forEach(function(item, index) {
+			doc.innerHTML = doc.innerHTML + "Project name: " + item.name + " --- " + item.description + "<br>";
+		})
 	</script>
 </div>
 
