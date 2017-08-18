@@ -13,8 +13,18 @@
 			data.forEach(function(item, index){
 				doc.innerHTML = doc.innerHTML + "<div id=\"" + item.full_name + "\"><h3>Project name: " + item.name + "</h3> --- " + item.description + "<br></div>";
 				console.log("//api.github.com/repos/" + item.full_name + "/comments");
+				
 				$.getJSON("//api.github.com/repos/" + item.full_name + "/releases", {}, function(innerData){
 					console.log(innerData);
+					
+					innerData.forEach(function(item1, index1){
+						doc.innerHTML = doc.innerHTML + innerData.name + " " + innerData.tag_name + "<br/>Assets: <br/>"; 
+						
+						innerData.assets.forEach(function(item2, index2){
+							doc.innerHTML = doc.innerHTML + "<a href=\"" + item2.url + "\">" + item2.name + "</a><br/>";
+						})
+					
+					})
 				})
 			}) 
 		});
