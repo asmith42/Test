@@ -8,11 +8,11 @@
 	<script type="text/javascript">
 		
 		$.getJSON('//api.github.com/users/jcolebrand/repos',{},function(data){
-
+			var doc = document.getElementById("github-projects");
 			console.log(data);
-			data.forEach(item, index) {
+			data.forEach(function(item, index){
 				doc.innerHTML = doc.innerHTML + "Project name: " + item.name + " --- " + item.description + "<br>";
-			}
+			}) 
 		});
 		
 		</script>
