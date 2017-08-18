@@ -19,10 +19,12 @@
 					
 					innerData.forEach(function(item1, index1){
 						doc.innerHTML = doc.innerHTML + innerData.name + " " + innerData.tag_name + "<br/>Assets: <br/>"; 
-						
+						var assets = innerData.assets;
+						if(typof assets != 'undefined'){
 						innerData.assets.forEach(function(item2, index2){
 							doc.innerHTML = doc.innerHTML + "<a href=\"" + item2.url + "\">" + item2.name + "</a><br/>";
 						})
+						}
 					
 					})
 				})
