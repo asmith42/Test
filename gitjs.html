@@ -14,12 +14,12 @@
 				doc.innerHTML = doc.innerHTML + "<div id=\"" + item.full_name + "\"><h3>Project name: " + item.name + "</h3> --- " + item.description + "<br></div>";
 				console.log("//api.github.com/repos/" + item.full_name + "/comments");
 				
-				$.getJSON("//api.github.com/repos/" + item.full_name + "/releases", {}, function(innerData){
+				$.getJSON("https://api.github.com/repos/" + item.full_name + "/releases", {}, function(innerData){
 					console.log(innerData);
+					data.forEach(function(item1, index1){
 					
-					
-						doc.innerHTML = doc.innerHTML + innerData.name + " " + innerData.tag_name + "<br/>Assets: <br/>"; 
-						var assets = innerData.assets;
+						doc.innerHTML = doc.innerHTML + item1.name + " " + item1.tag_name + "<br/>Assets: <br/>"; 
+						var assets = item1.assets;
 						if(typeof assets != 'undefined'){
 						assets.forEach(function(item2, index2){
 							doc.innerHTML = doc.innerHTML + "<a href=\"" + item2.url + "\">" + item2.name + "</a><br/>";
