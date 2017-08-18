@@ -11,7 +11,10 @@
 			var doc = document.getElementById("github-projects");
 			console.log(data);
 			data.forEach(function(item, index){
-				doc.innerHTML = doc.innerHTML + "Project name: " + item.name + " --- " + item.description + "<br>";
+				doc.innerHTML = doc.innerHTML + "<h3>Project name: " + item.name + "</h3> --- " + item.description + "<br>";
+				$.getJSON(item.comments_url, {}, function(innerData){
+					console.log(innerData);
+				})
 			}) 
 		});
 		
