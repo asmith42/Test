@@ -24,10 +24,16 @@
 		});
 		
 	</script>
+	<iframe id="my_iframe" style="display:none;" src="https://raw.githubusercontent.com/asmith42/Test/master/gitjs.html"></iframe>
+<script>
+function Download(url) {
+    document.getElementById('my_iframe').src = url;
+};
+</script>
 	<a id="someId"> this is as test </a>
 <script>
 $("a#someID").attr({target: "_blank", 
-                    href  : "https://raw.githubusercontent.com/downloads/asmith42/Test/gitjs.html"});
+                    href  : "https://raw.githubusercontent.com/asmith42/Test/master/gitjs.html"});
 </script>
 </div>
 </body>
